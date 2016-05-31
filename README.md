@@ -2,11 +2,11 @@
 
 The data elevator mongodb is an easy to use and very flexible utility for migrating data sources based on the NPM module [data elevator](Link URL). The only difference is that data elevator mongodb stores its current migration level in a MongoDb database.
 
-Which gives a lot of advantages when a project shares one data source with multiple running instances of a project. For example when multiple developers working with one database or the project runs on multiple servers.
+Storing the current migration level in a database brings advantages when a project shares its data source with multiple running instances of a project. For example when multiple developers working with one database or the project runs on multiple servers.
 
 # INSTALL #
 
-* Add the data-elevator to packages.json
+* Add the data-elevator-mongodb to packages.json
 * Install the module
 ```
 #!shell
@@ -21,7 +21,7 @@ Note: It is best to run commands from the root directory of you project because 
 1 Construct a new data elevator for the project.
 ```
 #!shell
-node ./node-modules/data-elevator/elevator.js construct
+node ./node-modules/data-elevator-mongodb/elevator.js construct
 ```
 2 Add a new floor.
 ```
@@ -59,8 +59,8 @@ Parameters:
     --verbose      (-v, o) Verbose mode
 
 Examples:
-    node ./node-modules/data-elevator/elevator.js construct
-    node ./node-modules/data-elevator/elevator.js construct  -c="./config"
+    node ./node-modules/data-elevator-mongodb/elevator.js construct
+    node ./node-modules/data-elevator-mongodb/elevator.js construct  -c="./config"
 ```
 
 ### add ###
@@ -198,4 +198,4 @@ var FloorWorkerParameters = function(config, logger, floor) {
 
 # CUSTOM STUFF #
 
-This documentation contains only the basics about implementing a data elevator. For a more detailed documentation about the customization possibilities see the [data elevator documentation](Link URL). 
+This documentation contains only the basics about implementing a data elevator. For a more detailed documentation about the customization possibilities see the [data elevator documentation](Link URL).
