@@ -1,4 +1,4 @@
-# DATA ELEVATOR MONGODB? #
+# DATA ELEVATOR MONGODB #
 
 The data elevator mongodb is an easy to use and very flexible utility for migrating data sources based on the NPM module [data elevator](Link URL). The only difference is that data elevator mongodb stores its current migration level in a MongoDb database.
 
