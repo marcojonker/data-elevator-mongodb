@@ -1,0 +1,16 @@
+{
+  "name": "data-elevator",
+  "version": "1.0.0",
+  "description": "Utility for migration data sources",
+  "main": "elevator.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "dependencies" : {
+    "data-elevator": "*",
+    "mongodb": "*",
+    "async": "*"
+  },
+  "author": "Marco Jonker",
+  "license": "ISC"
+}
