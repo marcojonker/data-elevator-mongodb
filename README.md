@@ -74,6 +74,7 @@ Command:   'node ./<working-dir>/elevator.js add'
 Parameters:
     --name         (-n, o) Custom name of the floor
     --config-dir=  (-c, o) Data elevator config dir (default=./data-elevator)
+    --working-dir= (-w, o) Data elevator (def=./data-elevator)
     --verbose      (-v, o) Verbose mode
 
 Examples:
@@ -90,9 +91,10 @@ Elevator will move up and perform the migrations for each floor passed by.
 Command:    'node ./<working-dir>/elevator.js up'
     
 Parameters:
-    --floor       (-f, o) Floor to move to, if undefined elevator moves to the top   
-    --config-dir  (-c, o) Data elevator config dir (default=./data-elevator)
-    --verbose     (-v, o) Verbose mode
+    --floor        (-f, o) Floor to move to, if undefined elevator moves to the top   
+    --config-dir=  (-c, o) Data elevator config dir (default=./data-elevator)
+    --working-dir= (-w, o) Data elevator (def=./data-elevator)
+    --verbose      (-v, o) Verbose mode
 
 Examples:
     node ./data-elevator/elevator.js up
@@ -109,9 +111,10 @@ Elevator will move down and perform the migrations for each floor passed by.
 Command:    'node ./<working-dir>/elevator.js down'
 
 Parameters:
-    --floor       (-f, r) Floor to move to
-    --config-dir  (-c, o) Data elevator config dir (default=./data-elevator)
-    --verbose     (-v, o) Verbose mode
+    --floor        (-f, r) Floor to move to
+    --config-dir=  (-c, o) Data elevator config dir (default=./data-elevator)
+    --working-dir= (-w, o) Data elevator (def=./data-elevator)
+    --verbose      (-v, o) Verbose mode
 
 Examples:
     node ./data-elevator/elevator.js down -f=2
@@ -127,8 +130,9 @@ Display the last action of the elevator.
 Command:    'node ./<working-dir>/elevator.js status'
 
 Parameters:
-    --config-dir  (-c, o) Data elevator config dir (default=./data-elevator)
-    --verbose     (-v, o) Verbose mode
+    --config-dir=  (-c, o) Data elevator config dir (default=./data-elevator)
+    --working-dir= (-w, o) Data elevator (def=./data-elevator)
+    --verbose      (-v, o) Verbose mode
 
 Examples:
     node ./data-elevator/elevator.js status
