@@ -1,16 +1,29 @@
 {
-  "name": "data-elevator",
-  "version": "1.0.0",
-  "description": "Utility for migration data sources",
+  "name": "data-elevator-mongodb",
+  "version": "0.0.1",
+  "description": "Flexible utility for migration of data sources with migration status stored in mongodb",
   "main": "elevator.js",
-  "scripts": {
-    "test": "test.js"
+  "keywords": ["migrate", "migrations", "mongodb", "data", "datasource", "database", "utility", "tool"],
+  "bugs": "https://bitbucket.org/cacadu/data-elevator-mongodb/issues/",
+  "license": "MIT",
+  "author": "Marco Jonker",
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "elevator.js",
+    "lib"
+  ],
+  "repository" : { 
+    "type" : "git",
+    "url" : "git@bitbucket.org:cacadu/data-elevator-mongodb.git"
   },
   "dependencies" : {
-    "data-elevator": "*",
-    "mongodb": "*",
-    "async": "*"
+    "async": "^1.x",
+    "mongodb": "2.x",
+    "data-elevator": "https://MJJonker:bDXk1LTzmrg11fvvOamz@bitbucket.org/cacadu/data-elevator.git#develop"
   },
-  "author": "Marco Jonker",
-  "license": "ISC"
+  "engines": {
+    "node": ">=5.0.0"
+  }
 }
