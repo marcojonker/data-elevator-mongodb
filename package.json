@@ -20,8 +20,8 @@
   },
   "dependencies" : {
     "async": "^1.x",
-    "mongodb": "2.x",
-    "data-elevator": "https://MJJonker:bDXk1LTzmrg11fvvOamz@bitbucket.org/cacadu/data-elevator.git#develop"
+    "mongodb": "^2.x",
+    "data-elevator": "<2.0.0"
   },
   "engines": {
     "node": ">=5.0.0"
