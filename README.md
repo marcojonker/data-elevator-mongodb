@@ -12,7 +12,6 @@ Storing the current migration level in a database brings advantages when a proje
 
 # INSTALL #
 
-* Install the module
 ```
 npm install data-elevator-mongodb
 ```
@@ -113,7 +112,6 @@ Parameters:
 Examples:
     node ./data-elevator/elevator up
     node ./data-elevator/elevator up -f=5 -c="./config"
-
 ```
 
 ### down ###
@@ -175,7 +173,6 @@ module.exports = {
         return callback(null);
     }
 }
-
 ```
 
 ### FloorWorkerParameters ###
@@ -188,7 +185,6 @@ var FloorWorkerParameters = function(config, logger, floor) {
     this.floor = floor;
     this.logger = logger;
 };
-
 ```
 
 # CUSTOM STUFF #
