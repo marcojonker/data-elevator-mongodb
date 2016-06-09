@@ -1,8 +1,11 @@
 {
   "name": "data-elevator-mongodb",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Flexible utility for managing migrations of mongodb data sources",
   "main": "elevator.js",
+    "bin" : { 
+    "data-elevator-mongodb" : "./bin/data-elevator.js" 
+  },
   "keywords": [
     "migrate",
     "migration",
@@ -30,13 +33,16 @@
     "package.json",
     "README.md",
     "LICENSE",
+    "CHANGELOG",
     "elevator.js",
-    "lib"
+    "lib",
+    "bin"
   ],
   "repository" : { 
     "type" : "git",
     "url" : "git@bitbucket.org:cacadu/data-elevator-mongodb.git"
   },
+  "homepage" : "https://bitbucket.org/cacadu/data-elevator-mongodb",
   "dependencies" : {
     "async": "^1.x",
     "mongodb": "^2.x",
