@@ -49,47 +49,118 @@ var config = {
     }
 }
 ```
-# MIGRATION EXAMPLES USING MONGOCLIENTHELPERS#
+# MIGRATION EXAMPLES #
 
-### Update the content of a property in documents in a collection ###
+These migrations use the class MongoClientHelpers, this class provider some easy functions to quickly access you collections and documents.
 
-```
-onUp : function(floorWorkerParameters, callback) {
-    MongoClientHelpers.getDocuments(floorWorkerParameters, 'dataobjects', function(error, database, collection, documents) {
-        async.each(documents, 
-            function(document, callback) {
-                if(document.objectStatus == 1) {
-                    document.objectStatus = 2;
-                    collection.update({"_id": document._id}, document, null, function(error, document) {
-                        return callback(error);
-                    })
-                } else {
-                    return callback(null);
-                }
-            }, 
-            function(error) {
-                MongoClientHelpers.closeDatabase();
-                return callback(error);
-            });
-    });
-}, 
-```
-
-### Rename the names of properties in a collection ###
+### Updating the content of a property in documents in a collection ###
 
 ```
-onUp : function(floorWorkerParameters, callback) {
-    MongoClientHelpers.getCollection(floorWorkerParameters, 'dataobjects', function(error, database, collection) {
-            var renameFields = {
-                'statText': 'statusText' 
-            };
+var MongoClientHelpers = require('data-elevator-mongodb/lib/helpers/mongo-client-helpers');
+var async = require('async');
 
-            collection.update({}, { $rename: renameFields }, {multi: true}, function(error) {
-                MongoClientHelpers.closeDatabase();
-                return callback(error);
-            })
-    })
-}, 
+module.exports = {
+    /**
+     * Data transformation that need to be performed when migrating the data up
+     * @param floorWorkerParameters - instance of FloorWorkerParameters
+     * @param callback(error) - If an error is returned then all the subsequent migration will not be handled
+     */
+    onUp : function(floorWorkerParameters, callback) {
+        
+        //Get all the documents of a collection in an array
+        MongoClientHelpers.getDocuments(floorWorkerParameters, 'dataobjects', function(error, database, collection, documents) {
+
+            //Iterate through the documents
+            async.each(documents, 
+                function(document, callback) {
+                    if(document.objectStatus == 1) {
+                        document.objectStatus = 2;
+                        
+                        //Update the document
+                        collection.update({"_id": document._id}, document, null, function(error, document) {
+                            return callback(error);
+                        })
+                    } else {
+                        return callback(null);
+                    }
+                }, 
+                function(error) {
+                    MongoClientHelpers.closeDatabase();
+                    return callback(error);
+                });
+        });
+    }, 
+    /**
+     * Data transformation that need to be performed when migrating the data down
+     * @param floorWorkerParameters - instance of FloorWorkerParameters
+     * @param callback(error) - If an error is returned then all the subsequent migration will not be handled
+     */
+    onDown : function(floorWorkerParameters, callback) {
+        MongoClientHelpers.getDocuments(floorWorkerParameters, 'dataobjects', function(error, database, collection, documents) {
+            async.each(documents, 
+                function(document, callback) {
+                    if(document.objectStatus == 2) {
+                        document.objectStatus = 1;
+                        collection.update({"_id": document._id}, document, null, function(error, document) {
+                            return callback(error);
+                        })
+                    } else {
+                        return callback(null);
+                    }
+                }, 
+                function(error) {
+                    MongoClientHelpers.closeDatabase();
+                    return callback(error);
+                });
+        });
+    }
+}
+```
+
+### Renaming the names of properties in a collection ###
+
+```
+var MongoClientHelpers = require('data-elevator-mongodb/lib/helpers/mongo-client-helpers');
+
+module.exports = {
+    /**
+     * Data transformation that need to be performed when migrating the data up
+     * @param floorWorkerParameters - instance of FloorWorkerParameters
+     * @param callback(error) - If an error is returned then all the subsequent migration will not be handled
+     */
+    onUp : function(floorWorkerParameters, callback) {
+        
+        //Get a specific collection
+        MongoClientHelpers.getCollection(floorWorkerParameters, 'dataobjects', function(error, database, collection) {
+                var renameFields = {
+                    'statText': 'statusText' 
+                };
+
+                //Update all the documents in the collection
+                collection.update({}, { $rename: renameFields }, {multi: true}, function(error) {
+                    MongoClientHelpers.closeDatabase();
+                    return callback(error);
+                })
+        });
+    }, 
+    /**
+     * Data transformation that need to be performed when migrating the data down
+     * @param floorWorkerParameters - instance of FloorWorkerParameters
+     * @param callback(error) - If an error is returned then all the subsequent migration will not be handled
+     */
+    onDown : function(floorWorkerParameters, callback) {
+        MongoClientHelpers.getCollection(floorWorkerParameters, 'quotes', function(error, database, collection) {
+                var renameFields = {
+                    'statusText': 'statText' 
+                };
+
+                collection.update({}, { $rename: renameFields }, {multi: true}, function(error) {
+                    MongoClientHelpers.closeDatabase();
+                    return callback(error);
+                })
+        });
+    }
+}
 ```
 
 # FURTHER DOCUMENTATION #
