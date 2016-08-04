@@ -49,6 +49,48 @@ var config = {
     }
 }
 ```
+# MIGRATION EXAMPLES USING MONGOCLIENTHELPERS#
+
+### Update the content of a property in documents in a collection ###
+
+```
+onUp : function(floorWorkerParameters, callback) {
+    MongoClientHelpers.getDocuments(floorWorkerParameters, 'dataobjects', function(error, database, collection, documents) {
+        async.each(documents, 
+            function(document, callback) {
+                if(document.objectStatus == 1) {
+                    document.objectStatus = 2;
+                    collection.update({"_id": document._id}, document, null, function(error, document) {
+                        return callback(error);
+                    })
+                } else {
+                    return callback(null);
+                }
+            }, 
+            function(error) {
+                MongoClientHelpers.closeDatabase();
+                return callback(error);
+            });
+    });
+}, 
+```
+
+### Rename the names of properties in a collection ###
+
+```
+onUp : function(floorWorkerParameters, callback) {
+    MongoClientHelpers.getCollection(floorWorkerParameters, 'dataobjects', function(error, database, collection) {
+            var renameFields = {
+                'statText': 'statusText' 
+            };
+
+            collection.update({}, { $rename: renameFields }, {multi: true}, function(error) {
+                MongoClientHelpers.closeDatabase();
+                return callback(error);
+            })
+    })
+}, 
+```
 
 # FURTHER DOCUMENTATION #
 
