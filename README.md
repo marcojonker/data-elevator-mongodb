@@ -13,7 +13,7 @@ npm install data-elevator-mongodb
 ```
 **STEP 2:** Construct a new data elevator for the project.
 ```
-node ./node-modules/data-elevator-mongodb construct
+node ./node_modules/data-elevator-mongodb construct
 ```
 **STEP 3:** Add a new migration.
 ```

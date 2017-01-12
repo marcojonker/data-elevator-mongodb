@@ -1,6 +1,6 @@
 {
   "name": "data-elevator-mongodb",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Flexible utility for managing migrations of mongodb data sources",
   "main": "elevator.js",
     "bin" : { 
@@ -50,7 +50,7 @@
     "type" : "git",
     "url" : "https://github.com/marcojonker/data-elevator-mongodb.git"
   },
-  "homepage" : "http://www.cacadu.nl/opensource",
+  "homepage" : "http://www.cacadu.eu/opensource",
   "dependencies" : {
     "async": "^2.x",
     "mongodb": "^2.x",
