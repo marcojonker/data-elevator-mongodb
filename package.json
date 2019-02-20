@@ -3,8 +3,8 @@
   "version": "2.2.0",
   "description": "Flexible utility for managing migrations of mongodb data sources",
   "main": "elevator.js",
-    "bin" : { 
-    "data-elevator-mongodb" : "./bin/data-elevator.js" 
+  "bin": {
+    "data-elevator-mongodb": "./bin/data-elevator.js"
   },
   "keywords": [
     "migrate",
@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "test": "node ./test/test.js"
-  }, 
+  },
   "bugs": "https://github.com/marcojonker/data-elevator-mongodb/issues/",
   "license": "MIT",
   "author": "Marco Jonker",
@@ -46,15 +46,15 @@
     "bin",
     "test"
   ],
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/marcojonker/data-elevator-mongodb.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcojonker/data-elevator-mongodb.git"
   },
-  "homepage" : "http://www.cacadu.nl/opensource",
-  "dependencies" : {
-    "async": "^2.x",
-    "mongodb": "^2.x",
-    "data-elevator": "^2.x"
+  "homepage": "http://www.cacadu.nl/opensource",
+  "dependencies": {
+    "async": "2.6.2",
+    "mongodb": "3.1.13",
+    "data-elevator": "2.2.2"
   },
   "engines": {
     "node": ">=5.0.0"
