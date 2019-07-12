@@ -4,6 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.0] - 2019-07-12
+### Updated
+- Async library version
+- Mongodb library version
+- Data elevator version
+
+Changed
+- Coding conventions
+
 ## [2.2.1] - 2017-01-12
 ### Fixed
 - Documenation
