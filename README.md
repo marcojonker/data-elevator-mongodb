@@ -41,7 +41,7 @@ node ./data-elevator/elevator help
 * **levelControllerConfig.connectionUrl:** Url for database connection
 
 ```
-var config = {
+const config = {
     levelControllerConfig: {
        collectionName: "_data_elevator",
        connectionOptions: null,
@@ -56,8 +56,8 @@ These migrations use the class MongoClientHelpers, this class provider some easy
 ### Updating the content of a property in documents in a collection ###
 
 ```
-var MongoClientHelpers = require('data-elevator-mongodb/lib/helpers/mongo-client-helpers');
-var async = require('async');
+const MongoClientHelpers = require('data-elevator-mongodb/lib/helpers/mongo-client-helpers');
+const async = require('async');
 
 module.exports = {
     /**
@@ -120,7 +120,7 @@ module.exports = {
 ### Renaming the names of properties in a collection ###
 
 ```
-var MongoClientHelpers = require('data-elevator-mongodb/lib/helpers/mongo-client-helpers');
+const MongoClientHelpers = require('data-elevator-mongodb/lib/helpers/mongo-client-helpers');
 
 module.exports = {
     /**
@@ -132,7 +132,7 @@ module.exports = {
         
         //Get a specific collection
         MongoClientHelpers.getCollection(floorWorkerParameters, 'dataobjects', function(error, database, collection) {
-                var renameFields = {
+                const renameFields = {
                     'statText': 'statusText' 
                 };
 
@@ -150,7 +150,7 @@ module.exports = {
      */
     onDown : function(floorWorkerParameters, callback) {
         MongoClientHelpers.getCollection(floorWorkerParameters, 'quotes', function(error, database, collection) {
-                var renameFields = {
+                const renameFields = {
                     'statusText': 'statText' 
                 };
 
