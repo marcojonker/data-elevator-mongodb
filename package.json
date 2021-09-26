@@ -1,6 +1,6 @@
 {
   "name": "data-elevator-mongodb",
-  "version": "3.0.0",
+  "version": "4.0.0-rc",
   "description": "Flexible utility for managing migrations of mongodb data sources",
   "main": "elevator.js",
   "bin": {
