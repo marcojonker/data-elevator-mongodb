@@ -31,7 +31,7 @@
     "database"
   ],
   "scripts": {
-    "test": "node ./test/test.js"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "bugs": "https://github.com/marcojonker/data-elevator-mongodb/issues/",
   "license": "MIT",
