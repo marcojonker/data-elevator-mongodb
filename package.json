@@ -54,7 +54,7 @@
   "dependencies": {
     "async": "^3.2.1",
     "mongodb": "^4.1.2",
-    "data-elevator": "^4.0.0"
+    "data-elevator": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
