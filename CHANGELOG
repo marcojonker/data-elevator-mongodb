@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [5.0.1] - 2024-07-03
+### Updated
+- Bump versions
+
 ## [4.0.0] - 2021-09-27
 ### Updated
 - Async library version
