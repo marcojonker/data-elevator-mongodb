@@ -53,7 +53,7 @@
   "homepage": "http://www.cacadu.eu/opensource",
   "dependencies": {
     "async": "^3.2.6",
-    "mongodb": "^4.1.2",
+    "mongodb": "^4.17.0",
     "data-elevator": "^5.1.0"
   },
   "devDependencies": {
