@@ -25,17 +25,21 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.11.0
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-        mongodb-replica-set: test-rs
-        mongodb-port: 42069    
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.11.0
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+        mongodb-username: admin
+        mongodb-password: admin
+        mongodb-db: admin
+        mongodb-port: 27017
+        
     - run: npm install
     - run: npm test
