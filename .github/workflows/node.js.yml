@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        mongodb-version: [8.0.3-nanoserver]
+        mongodb-version: [latest]
 
     container: node:16-bullseye
 
