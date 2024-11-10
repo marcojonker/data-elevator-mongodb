@@ -28,14 +28,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.11.0
+    - name: Run docker-compose
+      uses: hoverkraft-tech/compose-action@v2.0.1
       with:
-        mongodb-version: ${{ matrix.mongodb-version }}   
-        mongodb-username: admin
-        mongodb-password: admin
-        mongodb-db: admin    
-        mongodb-port: 27017
+        compose-file: "./docker-compose.yml"        
                  
     - run: npm install
     - run: npm test
