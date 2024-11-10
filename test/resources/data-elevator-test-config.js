@@ -2,7 +2,7 @@ var config = {
     levelControllerConfig: {
        collectionName: "_data_elevator",
      //  connectionOptions: { useNewUrlParser: true},
-       connectionUrl: "mongodb://localhost:27017/admin"
+       connectionUrl: "mongodb://admin:admin@localhost:27017/admin"
     }
 }
 
