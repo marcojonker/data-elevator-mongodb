@@ -21,6 +21,12 @@ jobs:
 
     container: node:16-bullseye
 
+    services:
+      mongodb:
+        image: mongo
+        ports:
+        - 27017:27017
+
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -28,14 +34,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.11.0
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-        mongodb-username: admin
-        mongodb-password: admin
-        mongodb-db: admin
-        
-    - run: curl http://admin:admin@localhost:27017
+
     - run: npm install
     - run: npm test
