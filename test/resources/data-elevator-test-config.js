@@ -1,8 +1,12 @@
+const PORT = process.env.MONGODB_PORT || 27017;
+const HOST = process.env.MONGODB_HOST || "localhost";
+
+console.log(HOST)
+
 var config = {
     levelControllerConfig: {
        collectionName: "_data_elevator",
-       connectionOptions: { useNewUrlParser: true},
-       connectionUrl: "mongodb://admin:admin@localhost:27017/admin"
+       connectionUrl: `mongodb://${HOST}:${PORT}/admin`
     }
 }
 
