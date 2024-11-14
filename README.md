@@ -28,6 +28,8 @@ see: ./data-elevator/floors/
 node ./data-elevator/elevator move top
 node ./data-elevator/elevator move ground
 node ./data-elevator/elevator move 2
+node ./data-elevator/elevator move up 2
+node ./data-elevator/elevator move down 3
 ```
 **STEP 6:** Use help command to get information about additional commands
 ```
