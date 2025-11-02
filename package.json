@@ -1,6 +1,6 @@
 {
   "name": "data-elevator-mongodb",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "Flexible utility for managing migrations of mongodb data sources",
   "main": "elevator.js",
   "bin": {
@@ -53,14 +53,14 @@
   "homepage": "http://www.cacadu.eu/opensource",
   "dependencies": {
     "async": "^3.2.6",
-    "mongodb": "^4.17.0",
-    "data-elevator": "^5.1.0"
+    "mongodb": "^6.20.0",
+    "data-elevator": "^6.0.0"
   },
   "devDependencies": {
-    "eslint": "^9.14.0",
-    "mocha": "^10.8.2"
+    "eslint": "^9.39.0",
+    "mocha": "^11.7.4"
   },
   "engines": {
-    "node": ">=12.10.0"
+    "node": ">=18.0.0"
   }
 }
