@@ -19,7 +19,7 @@ jobs:
         node-version: [18.x]
         mongodb-version: [latest]
 
-    container: node:16-bullseye
+    container: node:18-bullseye
 
     services:
       mongodb:
