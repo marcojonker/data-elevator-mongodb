@@ -3,7 +3,7 @@ const HOST = process.env.MONGODB_HOST || "localhost";
 
 console.log(HOST)
 
-var config = {
+const config = {
     levelControllerConfig: {
        collectionName: "_data_elevator",
        connectionUrl: `mongodb://${HOST}:${PORT}/admin`

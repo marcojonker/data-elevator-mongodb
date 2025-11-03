@@ -31,7 +31,8 @@
     "database"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint ./lib ./test"
   },
   "bugs": "https://github.com/marcojonker/data-elevator-mongodb/issues/",
   "license": "MIT",
