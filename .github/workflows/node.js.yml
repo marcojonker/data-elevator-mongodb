@@ -36,6 +36,7 @@ jobs:
         cache: 'npm'
 
     - run: npm install
+    - run: npm run lint
     - run: npm test
       env:
         MONGODB_HOST: mongodb
