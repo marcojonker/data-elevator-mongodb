@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [6.0.0] - 2025-11-02
+### Updated
+- Bump versions
+- Mongo client to version 6.20.0
+
 ## [5.1.0] - 2024-07-03
 ### Updated
 - Bump versions

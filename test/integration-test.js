@@ -21,7 +21,7 @@ beforeEach(function () {
     elevator = new ElevatorBase(new ConsoleLogger(true), MongoDbLevelController, process.cwd());
 });
 
-runTestCommand = function(index, commandTest, callback) {
+const runTestCommand = function(index, commandTest, callback) {
     console.log("*****************************************************************");
     console.log("*** TEST " + index + ": " + commandTest.title);
     console.log("*****************************************************************");
