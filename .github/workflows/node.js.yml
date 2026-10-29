@@ -16,21 +16,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
-        mongodb-version: [latest]
+        node-version: [22.x, 24.x]
+        mongodb-version: [8, 9]
 
-    container: node:18-bullseye
+    container: node:22-bullseye
 
     services:
       mongodb:
-        image: mongo
+        image: mongo:${{ matrix.mongodb-version }}
         ports:
         - 27017:27017
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
